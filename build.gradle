@@ -1,0 +1,72 @@
+
+buildscript {
+    ext.kotlin_version = '1.3.72'
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.6.3'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url "https://jitpack.io" }
+    }
+}
+
+ext {
+    appcompat_ver = "1.1.0"
+    annotation_ver = "1.1.0"
+    build_tools_ver = "28.0.3"
+    card_view_ver = "1.0.0"
+    constraint_layout_ver = "2.0.0-beta4"
+    databinding_ver = "4.1.0-alpha08"
+    fragments_ktx_ver = "1.2.4"
+    google_dagger_ver = "2.27"
+    google_dagger_compiler_ver = "2.27"
+    google_gson_ver = "2.8.6"
+    google_material_design_ver = "1.2.0-alpha06"
+    junit_ver = "4.13"
+    ktx_core_ver = "1.3.0-rc01"
+    lifecycle_common_java8_ver = "2.3.0-alpha02"
+    lifecycle_compiler_ver = "2.2.0"
+    lifecycle_livedata_ktx_ver = "2.3.0-alpha02"
+    lifecycle_reactivestreams_ktx_ver = "2.3.0-alpha02"
+    lifecycle_viewmodel_ktx_ver = "2.3.0-alpha02"
+    lifecycle_vm_savedstate_ver = "2.3.0-alpha02"
+    lifecycle_runtime_ktx_ver = "2.3.0-alpha02"
+    mockito_core_ver = "2.21.0"
+    mockito_inline_ver = "2.13.0"
+    sdk_compile_ver = 29
+    sdk_max_ver = 29
+    sdk_min_ver = 23
+    sdk_target_ver = 29
+    test_arch_core_ver = "2.1.0"
+    test_core_ver = "1.3.0-beta01"
+    test_core_ktx_ver = "1.3.0-beta01"
+    test_espresso_core_ver = "3.3.0-alpha04"
+    test_espresso_intent_ver = "3.3.0-alpha04"
+    test_junit_ver = "1.1.2-beta01"
+    test_junit_ktx_ver = "1.1.2-beta01"
+    test_robolectric_ver = "4.3.1"
+    test_runner_ver = "1.3.0-beta01"
+    test_truth_ver = "1.3.0-alpha02"
+}
+
+tasks.withType(Test) {
+    testLogging {
+        exceptionFormat "full"
+        events "started", "skipped", "passed", "failed"
+        showStandardStreams true
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

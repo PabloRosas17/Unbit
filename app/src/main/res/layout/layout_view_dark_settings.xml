@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="mViewModel"
+            type="coffee.flavors.unbit.controller.viewmodels.ViewModelSettings"/>
+        <variable
+            name="mPresenter"
+            type="coffee.flavors.unbit.view.presenters.activities.PresenterSettings" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_settings_view_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorDarkPrimaryDark">
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/settings_abl"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/settings_appbar_back_btn"
+                    style="@style/MtrlTheme.DarkBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/gd_settings_appbar_15_ver"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:icon="@drawable/baseline_keyboard_arrow_left_white_18dp"
+                    app:iconTint="@color/colorLight"
+                    android:onClick="@{()->mPresenter.fireBackBtn()}"/>
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/settings_appbar_title"
+                    style="@style/MtrlTheme.DarkTv"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintStart_toEndOf="@+id/settings_appbar_back_btn"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:text="@string/app_name"
+                    android:textSize="15sp"
+                    android:textColor="@color/colorLight"
+                    android:gravity="center|start"
+                    android:paddingStart="08dp"
+                    android:paddingEnd="0dp"/> <!-- satisfy lint , code quality -->
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/gd_settings_appbar_15_ver"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.15" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+        <ListView
+            android:id="@+id/settings_lv"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/settings_abl"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:divider="@null"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

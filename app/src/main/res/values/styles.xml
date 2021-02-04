@@ -1,0 +1,25 @@
+<resources>
+    <!-- A style is a collection of attributes that specify the appearance for a single View. -->
+    <style name="MtrlTheme.TextInputLayout" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="hintTextColor">@color/colorDark</item>
+        <item name="android:textColorHint">@color/colorLight</item>
+        <item name="boxStrokeColor">@color/colorDark</item>
+        <item name="boxStrokeWidth">2dp</item>
+        <item name="boxBackgroundColor">@color/colorLightPrimary</item>
+        <item name="boxBackgroundMode">filled</item>
+    </style>
+    <style name="MtrlTheme.LightBtn" parent="@style/Widget.MaterialComponents.Button">
+        <item name="android:background">@color/colorLightPrimary</item>
+        <item name="backgroundTint">@color/colorLightPrimary</item>
+    </style>
+    <style name="MtrlTheme.LightTv" parent="@style/Widget.MaterialComponents.TextView">
+        <item name="android:background">@color/colorLightPrimary</item>
+    </style>
+    <style name="MtrlTheme.DarkBtn" parent="@style/Widget.MaterialComponents.Button">
+        <item name="android:background">@color/colorDarkPrimary</item>
+        <item name="backgroundTint">@color/colorDarkPrimary</item>
+    </style>
+    <style name="MtrlTheme.DarkTv" parent="@style/Widget.MaterialComponents.TextView">
+        <item name="android:background">@color/colorDarkPrimary</item>
+    </style>
+</resources>

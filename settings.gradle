@@ -1,0 +1,2 @@
+rootProject.name='Unbit'
+include ':app'
